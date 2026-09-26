@@ -1,0 +1,50 @@
+# Learn more [https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files](https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files?utm_source=gemini)
+
+# dependencies
+
+mobile/recruit-mobile/node_modules/
+
+# Expo
+
+mobile/recruit-mobile/.expo/
+mobile/recruit-mobile/dist/
+mobile/recruit-mobile/web-build/
+mobile/recruit-mobile/expo-env.d.ts
+
+# Native
+
+mobile/recruit-mobile/.kotlin/
+mobile/recruit-mobile/*.orig.*
+mobile/recruit-mobile/*.jks
+mobile/recruit-mobile/*.p8
+mobile/recruit-mobile/*.p12
+mobile/recruit-mobile/*.key
+mobile/recruit-mobile/*.mobileprovision
+
+# Metro
+
+mobile/recruit-mobile/.metro-health-check*
+
+# debug
+
+mobile/recruit-mobile/npm-debug.*
+mobile/recruit-mobile/yarn-debug.*
+mobile/recruit-mobile/yarn-error.*
+
+# macOS
+
+mobile/recruit-mobile/.DS_Store
+mobile/recruit-mobile/*.pem
+
+# local env files
+
+mobile/recruit-mobile/.env*.local
+
+# typescript
+
+mobile/recruit-mobile/*.tsbuildinfo
+
+# generated native folders
+
+mobile/recruit-mobile/ios
+mobile/recruit-mobile/android
