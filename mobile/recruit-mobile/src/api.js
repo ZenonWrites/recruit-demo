@@ -1,5 +1,5 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { API_URL_PRIMARY , API_URL_SECONDARY } from './config';
+import { API_URL_PRIMARY, API_URL_SECONDARY } from './config';
 
 let token = null;
 
@@ -21,19 +21,17 @@ export async function api(path, method = 'GET', body) {
 
   try {
     // Try the primary URL first
-    res = await fetch(API_URL + path, { method, headers, body: reqBody });
+    res = await fetch(API_URL_PRIMARY + path, { method, headers, body: reqBody });
   } catch (e) {
     try {
-      // If primary fails, immediately try the backup URL
-      const { SECONDARY_API_URL } = require('./config'); 
-      res = await fetch(SECONDARY_API_URL + path, { method, headers, body: reqBody });
+      // If primary fails, try the backup URL
+      res = await fetch(API_URL_SECONDARY + path, { method, headers, body: reqBody });
     } catch (err) {
       throw new Error('Cannot reach any server. Check your connection.');
     }
   }
-  
+
   const data = await res.json().catch(() => ({}));
   if (!res.ok) throw new Error(data.error || data.detail || 'Request failed');
   return data;
 }
-
